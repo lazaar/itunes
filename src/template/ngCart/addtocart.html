@@ -1,0 +1,11 @@
+<div>
+    <a class="btn btn-md btn-primary"
+       ng-click="ngCart.addItem(id, name, price, q, data)"
+       ng-hide="inCart()"
+       >Ajouter au panier </a>
+
+    <a class="btn btn-md btn-danger"
+       ng-click="ngCart.removeItemById(id)"
+       ng-show="inCart()"
+       >Supprimer du panier</a>
+</div> 
