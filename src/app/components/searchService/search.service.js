@@ -17,8 +17,13 @@
 
                 /********** On vérifie la connextion internet **********/
                 if(navigator.onLine){
-                    var url = itunesConstantes.url + query;
-                    $http.get(encodeURI(url))
+                    var url = itunesConstantes.url;
+                    $http.jsonp(encodeURI(url), {
+                            params: {
+                                "callback": "JSON_CALLBACK",
+                                "term": query
+                            }
+                        })
                         .success(function (datas) {
                             // Récupération de pistes
                             defered.resolve(datas);
