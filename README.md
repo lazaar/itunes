@@ -2,6 +2,9 @@
 
 C'est une Single Page Application pour la recherche sur iTunes et l'ajout des pistes sur un panier. 
 
+## Demo : 
+http://lazaar.github.io/itunes/#/
+
 ## Développement :
 ### Frameworks utilisés:
 L’application est développée avec le Framework AngularJS (1.4), avec l’architecture MVC. On a utilisé le générateur de Yoeman : gulp-angular (https://github.com/swiip/generator-gulp-angular) comme starter du projet. 
