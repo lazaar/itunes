@@ -1,0 +1,36 @@
+<div class="table-responsive col-lg-12" ng-show="ngCart.getTotalItems() > 0">
+
+    <table class="table table-striped ngCart cart">
+
+        <thead>
+        <tr>
+            <th></th>
+            <th></th>
+            <th>Prix</th>
+        </tr>
+        </thead>
+        <tfoot>
+        <tr>
+            <td></td>
+            <td>Total:</td>
+            <td>{{ ngCart.totalCost() | currency }}</td>
+        </tr>
+        </tfoot>
+        <tbody>
+        <tr ng-repeat="item in ngCart.getCart().items track by $index">
+            <td><span ng-click="ngCart.removeItemById(item.getId())" class="close">X</span></td>
+
+            <td>{{ item.getName() }}</td>
+            <td>{{ item.getPrice() | currency}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<style>
+    .ngCart.cart span[ng-click] {
+        cursor: pointer;
+    }
+    .ngCart.cart .glyphicon.disabled {
+        color:#aaa;
+    }
+</style>
