@@ -14,17 +14,22 @@
          */
         function searchMusic(query){
                 var defered = $q.defer();
+
+                /********** On vérifie la connextion internet **********/
                 if(navigator.onLine){
                     var url = itunesConstantes.url + query;
                     $http.get(encodeURI(url))
                         .success(function (datas) {
+                            // Récupération de pistes
                             defered.resolve(datas);
                         })
                         .error(function (datas, status, headers, config) {
                             $log.debug('Erreur lors de la récupération des resultats :', datas, status, headers, config);
+                            // Erreur WS
                             defered.reject(itunesConstantes.messageError.wsError);
                         });
                 }else {
+                    // Pas de connexion Internet
                     defered.reject(itunesConstantes.messageError.noConnection);
                 }
                 return defered.promise;

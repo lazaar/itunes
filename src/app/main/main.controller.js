@@ -9,6 +9,7 @@
   function MainController(searchService) {
     var vm = this;
 
+    /********** Lancer la recherche des pistes **********/
     function validate(){
       vm.isLoading = true;
       searchService.searchMusic(vm.query).then(function(datas){
@@ -22,11 +23,14 @@
 
       });
     }
+
+    /********** Constructeur **********/
     function init() {
       vm.validate = validate;
       vm.errorMsg = '';
       vm.songs = {resultCount:0}
     }
+    
     init();
   }
 })();

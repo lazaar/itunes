@@ -1,9 +1,11 @@
 <div>
+	<!--    Si le produit n'exist pas dans le panier   -->
     <a class="btn btn-md btn-primary"
        ng-click="ngCart.addItem(id, name, price, q, data)"
        ng-hide="inCart()"
        >Ajouter au panier </a>
 
+	<!--    Si le produit exist dans le panier   -->
     <a class="btn btn-md btn-danger"
        ng-click="ngCart.removeItemById(id)"
        ng-show="inCart()"

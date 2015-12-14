@@ -1,5 +1,6 @@
 (function () {
     'use strict';
+    /********** Fichier des constantes **********/
     angular.module('itunes').constant('itunesConstantes', {
         url:'https://itunes.apple.com/search?term=',
         messageError:{
